@@ -2,6 +2,7 @@
 const router = require('express').Router();
 module.exports = router;
 const User = require('../models/user');
+const Destino = require('../models/destinos');
 
 router.get('/', (req, res) => {
     res.send(process.env.NODE_ENV)
@@ -91,3 +92,28 @@ router.patch('/users/:user_id', (req, res) => {
            res.status(400).send(err);
        });
    }); */
+
+   /////////////////////////////////////////
+   // RUTAS PARA LOS DESTINOS ////
+
+   router.post('/destins', (req, res) => {
+       new Destino(req.body)
+       .save()
+       .then(destino => {
+           res.send(destino);
+       }).catch(err => {
+           res.status(400).send(err);
+       })
+
+    })
+
+
+
+
+   router.get('/destins', (req, res) =>{
+       Destino.find({}).then(destins => {
+           res.send(destins);
+       }).catch(err => {
+           res.status(500).send(err);
+       })
+   })

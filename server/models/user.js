@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const {pick} = require('lodash');
+
 const userSchema = new mongoose.Schema({
     //_id, Se añade de forma automatica
     name: {
