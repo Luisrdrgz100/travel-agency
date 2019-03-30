@@ -1,0 +1,15 @@
+html, body {
+    background-color: aquamarine;
+    font-size: 62.5%;
+}
+/* 62.5%  para mejorar la accesibilidad, eso por la fuente base que son 16px, lo que quedaria en 10px*/
+h1{
+    font-size: 3.2rem;
+}
+p{
+    font-size: 1.6rem;
+}
+a {
+    text-decoration: none;
+    
+}
