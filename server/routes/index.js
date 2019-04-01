@@ -4,7 +4,7 @@ module.exports = router;
 const User = require('../models/user');
 const Destino = require('../models/destinos');
 
-router.get('/', (req, res) => {
+router.get('/env', (req, res) => {
     res.send(process.env.NODE_ENV)
 });
 /***
@@ -15,9 +15,9 @@ router.post('/users', (req, res) => {
     new User(req.body)
         .save()
         .then(user => {
-            res.send(user); 
+            res.json(user); 
         }).catch(err => {
-            res.status(400).send(err);
+            res.status(400).json(err);
         })
 })
 

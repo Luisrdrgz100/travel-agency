@@ -42,6 +42,28 @@ app.get('/hbs', (req, res) =>{
     }); // render renderiza de acuerdo al view engine y se envian variables
 })
 
+
+///////body principal////////
+
+app.get('/', (req, res) => {
+    res.render('home.hbs', {
+        title: 'home',
+        layout: 'template'
+    })
+})
+
+///////cuerpo de viajes////////
+
+app.get('/destinos', (req, res) => {
+    res.render('destinos.hbs', {
+        title: 'home',
+        layout: 'template'
+    })
+})
+
+
+
+
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`)
 });
