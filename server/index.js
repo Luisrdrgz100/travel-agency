@@ -60,7 +60,13 @@ app.get('/destinos', (req, res) => {
         layout: 'template'
     })
 })
-
+///////////quienes somos//////////////
+app.get('/nosotros', (req, res) => {
+    res.render('quienessomos.hbs',{
+        title: 'nosotros',
+        layout:'template'
+    })
+})
 
 
 
